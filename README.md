@@ -106,8 +106,6 @@ npm install -g @anthropic-ai/claude-code
 # 首先安装PortableBuildTools
 # https://github.com/Data-Oriented-House/PortableBuildTools
 call D:\BuildTools\devcmd.bat
-set INCLUDE=D:\BuildTools\VC\Tools\MSVC\14.44.35207\include;D:\BuildTools\Windows Kits\10\Include\10.0.26100.0\ucrt;D:\BuildTools\Windows Kits\10\Include\10.0.26100.0\shared
-set LIB=D:\BuildTools\VC\Tools\MSVC\14.44.35207\lib\x64;D:\BuildTools\Windows Kits\10\Lib\10.0.26100.0\um\x64
 set DISTUTILS_USE_SDK=1
-
+# 或者参考https://github.com/qy527145/msvclib
 ```
