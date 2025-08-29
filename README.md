@@ -12,6 +12,9 @@ uv python install 3.13
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 default = true
 
+# 备用方法：环境变量
+UV_DEFAULT_INDEX=https://pypi.tuna.tsinghua.edu.cn/simple
+
 # pip 设置全局镜像
 pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 
