@@ -7,9 +7,15 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 uv python install 3.13
 
 # uv 设置全局镜像
-# 在 ~/.config/uv/uv.toml 或者 /etc/uv/uv.toml 填写下面的内容：
+# Linux： ~/.config/uv/uv.toml 或者 /etc/uv/uv.toml
+# Windows：%ALLUSERSPROFILE%\uv\uv.toml （C:\ProgramData\uv.toml）
 [[index]]
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+default = true
+
+# 项目级别 pyproject.toml
+[[tool.uv.index]]
+url = "https://test.pypi.org/simple"
 default = true
 
 # 备用方法：环境变量
@@ -43,6 +49,7 @@ git config --global user.email xxx
 git config --global http.sslVerify false
 
 # ssh配置文件：
+StrictHostKeyChecking no
 ServerAliveInterval 60
 ServerAliveCountMax 5
 
