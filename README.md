@@ -15,7 +15,7 @@ default = true
 
 # 项目级别 pyproject.toml
 [[tool.uv.index]]
-url = "https://test.pypi.org/simple"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
 default = true
 
 # 备用方法：环境变量
