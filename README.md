@@ -1,8 +1,20 @@
 # note
 记录一些通用的笔记
 ```
+# cmd设置代理
+set http_proxy=http://127.0.0.1:10808
+set https_proxy=http://127.0.0.1:10808
+
 # 安装uv
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+# 使用代理安装
+powershell -ExecutionPolicy Bypass -c "$p='http://127.0.0.1:10808';[Net.WebRequest]::DefaultWebProxy=new Net.WebProxy($p);irm https://astral.sh/uv/install.ps1|iex"
+
+# linux 下安装uv
+export http_proxy=http://127.0.0.1:10808
+export https_proxy=http://127.0.0.1:10808
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # 安装python
 uv python install 3.13
 
