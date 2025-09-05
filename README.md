@@ -20,6 +20,13 @@ uv python install 3.13
 
 # uv 设置全局镜像
 # Linux： ~/.config/uv/uv.toml 或者 /etc/uv/uv.toml
+mkdir -p /etc/uv
+cat > /etc/uv/uv.toml << EOF
+[[index]]
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+default = true
+EOF
+
 # Windows：%ALLUSERSPROFILE%\uv\uv.toml （C:\ProgramData\uv.toml）
 [[index]]
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
