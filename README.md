@@ -66,6 +66,7 @@ git config --global http.https://172.16.0.120.proxy http://127.0.0.1:10808
 git config --global user.name xxx
 git config --global user.email xxx
 git config --global http.sslVerify false
+git config --global credential.helper store
 
 # ssh配置文件：
 StrictHostKeyChecking no
