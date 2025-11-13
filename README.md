@@ -15,6 +15,12 @@ export http_proxy=http://127.0.0.1:10808
 export https_proxy=http://127.0.0.1:10808
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# 使用镜像安装uv
+# macOS / Linux
+curl -LsSf https://gitee.com/wangnov/uv-custom/releases/latest/download/setup_hooks.sh | sh
+# Windows (PowerShell)
+powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/releases/latest/download/setup_hooks.ps1 | iex"
+
 # 安装python
 uv python install 3.13
 
