@@ -25,6 +25,11 @@ curl -LsSf https://gitee.com/wangnov/uv-custom/releases/latest/download/setup_ho
 # Windows (PowerShell)
 powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/releases/latest/download/setup_hooks.ps1 | iex"
 
+# Linux 使用镜像安装uv（自动查询版本号）
+apt install jq curl
+curl -LsSf https://gitee.com/wangnov/uv-custom/releases/download/`curl -s https://gitee.com/api/v5/repos/wangnov/uv-custom/tags | jq -r 'sort_by(.commit.date)|.[-1].name'`/uv-installer-custom.sh | sh
+
+
 # 安装python
 uv python install 3.13
 
