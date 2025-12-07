@@ -1,6 +1,10 @@
 # note
 记录一些通用的笔记
 ```
+# 设置国内镜像
+bash <(curl -sSL https://linuxmirrors.cn/main.sh)
+bash <(curl -sSL https://linuxmirrors.cn/docker.sh)
+
 # cmd设置代理
 set http_proxy=http://127.0.0.1:10808
 set https_proxy=http://127.0.0.1:10808
