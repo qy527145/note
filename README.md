@@ -21,9 +21,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # 使用镜像安装uv
 # macOS / Linux
-curl -LsSf https://gitee.com/wangnov/uv-custom/releases/latest/download/setup_hooks.sh | sh
+curl -LsSf https://gitee.com/wangnov/uv-custom/releases/download/0.9.17/uv-installer-custom.sh | sh
 # Windows (PowerShell)
-powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/releases/latest/download/setup_hooks.ps1 | iex"
+powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/releases/download/0.9.17/uv-installer-custom.ps1 | iex"
 
 # Linux 使用镜像安装uv（自动查询版本号）
 apt install jq curl
