@@ -70,9 +70,8 @@ winget install git
 
 # 设置git全局代理
 git config --global http.proxy http://127.0.0.1:10808
-git config --global https.proxy http://127.0.0.1:10808
 
-# git config --global --unset https.proxy
+# git config --global --unset http.proxy
 # 为某个host单独设置代理
 git config --global http.https://172.16.0.120.proxy http://127.0.0.1:10808
 
@@ -82,6 +81,21 @@ git config --global user.name xxx
 git config --global user.email xxx
 git config --global http.sslVerify false
 git config --global credential.helper store
+
+# ~/.gitconfig
+[user]
+	name = xxx
+	email = xxx
+[credential]
+	provider = generic
+	helper = store
+
+[http "https://github.com"]
+	proxy = http://127.0.0.1:10808
+
+[http "https://192.168.xx.xx"]
+	sslVerify = false
+	proxy = http://127.0.0.1:10819
 
 # ssh配置文件：
 StrictHostKeyChecking no
