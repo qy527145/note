@@ -21,9 +21,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # 使用镜像安装uv
 # macOS / Linux
-curl -LsSf https://gitee.com/wangnov/uv-custom/releases/download/0.9.17/uv-installer-custom.sh | sh
+curl -LsSf https://gitee.com/wangnov/uv-custom/releases/download/0.10.10/uv-installer-custom.sh | sh
 # Windows (PowerShell)
-powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/releases/download/0.9.17/uv-installer-custom.ps1 | iex"
+powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/releases/download/0.10.10/uv-installer-custom.ps1 | iex"
 
 # Linux 使用镜像安装uv（自动查询版本号）
 apt install jq curl
@@ -37,12 +37,16 @@ uv python install 3.13
 # Linux： ~/.config/uv/uv.toml 或者 /etc/uv/uv.toml
 mkdir -p /etc/uv
 cat > /etc/uv/uv.toml << EOF
+python-install-mirror = "https://ghfast.top/https://github.com/astral-sh/python-build-standalone/releases/download"
+
 [[index]]
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 default = true
 EOF
 
-# Windows：%ALLUSERSPROFILE%\uv\uv.toml （C:\ProgramData\uv.toml）
+# Windows：%ALLUSERSPROFILE%\uv\uv.toml （C:\ProgramData\uv\uv.toml）（在 %ProgramData%\uv\uv.toml 或者 %AppData%\uv\uv.toml）
+python-install-mirror = "https://ghfast.top/https://github.com/astral-sh/python-build-standalone/releases/download"
+
 [[index]]
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 default = true
@@ -105,7 +109,7 @@ ServerAliveCountMax 5
 Host github.com
     HostName github.com
     User git
-    ProxyCommand connect.exe -S 127.0.0.1:10808 &h %p
+    ProxyCommand connect.exe -S 127.0.0.1:10808 %h %p
 
 # msys2
 # node
@@ -141,25 +145,6 @@ bash -c "genhtml coverage.info -o report --rc lcov_branch_coverage=1"
 
 筛选
 lcov --extract coverage.info "*/module1.c" --output-file module1_coverage.info
-
-
-# claude code
-npm install -g @anthropic-ai/claude-code
-修改配置文件 ~/.claude/settings.json：
-{
-  "env": {
-    "ANTHROPIC_AUTH_TOKEN": "key",
-    "ANTHROPIC_BASE_URL": "xxx",
-    "ANTHROPIC_MODEL": "claude-sonnet-4-20250514",
-    "ANTHROPIC_SMALL_FAST_MODEL": "claude-3-5-haiku-20241022",
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": 1
-  },
-  "permissions": {
-    "allow": [],
-    "deny": []
-  }
-}
 
 # pip install 缺msvc编译器（不想安装VS那一坨）
 # 首先安装PortableBuildTools
