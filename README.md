@@ -10,6 +10,7 @@ set http_proxy=http://127.0.0.1:10808
 set https_proxy=http://127.0.0.1:10808
 
 # 安装uv
+set UV_INSTALLER_GITHUB_BASE_URL=https://ghfast.top/https://github.com
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 # 使用代理安装
 powershell -ExecutionPolicy Bypass -c "$p='http://127.0.0.1:10808';[Net.WebRequest]::DefaultWebProxy = New-Object Net.WebProxy($p); irm https://astral.sh/uv/install.ps1 | iex"
