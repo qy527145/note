@@ -1,6 +1,8 @@
 # note
 记录一些通用的笔记
 ```
+# windows 系统安装
+start ms-cxh:localonly
 # 设置国内镜像
 bash <(curl -sSL https://linuxmirrors.cn/main.sh)
 bash <(curl -sSL https://linuxmirrors.cn/docker.sh)
