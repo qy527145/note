@@ -3,6 +3,9 @@
 ```
 # windows 系统安装
 start ms-cxh:localonly
+# windows 右键菜单
+reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+
 # 设置国内镜像
 bash <(curl -sSL https://linuxmirrors.cn/main.sh)
 bash <(curl -sSL https://linuxmirrors.cn/docker.sh)
