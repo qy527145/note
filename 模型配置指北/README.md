@@ -171,6 +171,9 @@ bun i -g @openai/codex
 ### 4.2 核心配置
 配置文件：`~/.codex/config.toml`
 ```toml
+profile = "profile1"
+
+[profiles.profile1]
 model_provider = "newapi"
 model = "gpt-5.4"
 windows_wsl_setup_acknowledged = true
@@ -182,7 +185,8 @@ personality = "pragmatic"
 name = "New API"
 base_url = "<your base_url>/v1" # 替换为实际 API 地址
 wire_api = "responses"
-env_key = "NEW_API_KEY"
+# env_key = "NEW_API_KEY"
+experimental_bearer_token="<your api_key>"
 
 [windows]
 sandbox = "elevated"
@@ -191,6 +195,7 @@ sandbox = "elevated"
 **重要说明**：
 - 需先配置环境变量 `NEW_API_KEY=<your api_key>` 后再使用 Codex
 - Windows 可通过 `set NEW_API_KEY=<your api_key>` 临时设置，或在系统环境变量中永久配置
+- 临时使用（不推荐）：直接将api_key设置到experimental_bearer_token属性
 
 ## 五、Claude 配置
 ### 5.1 安装（VS Code 扩展）
