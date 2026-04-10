@@ -108,9 +108,12 @@ git config --global credential.helper store
 	proxy = http://127.0.0.1:10819
 
 # ssh配置文件：
-StrictHostKeyChecking no
 ServerAliveInterval 60
 ServerAliveCountMax 5
+StrictHostKeyChecking no
+UserKnownHostsFile NUL
+HostKeyAlgorithms=+ssh-rsa
+PubkeyAcceptedAlgorithms=ssh-rsa
 
 Host github.com
     HostName github.com
