@@ -219,7 +219,8 @@ cd ~/.vscode/extensions/anthropic.claude-code-2.1.76-win32-x64/resources/native-
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5-20251101",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5-20250929",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5-20251001",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "ENABLE_PROMPT_CACHING_1H": "1"
   },
   "permissions": {
     "allow": [
