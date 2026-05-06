@@ -113,12 +113,14 @@ ServerAliveCountMax 5
 StrictHostKeyChecking no
 UserKnownHostsFile NUL
 HostKeyAlgorithms=+ssh-rsa
-PubkeyAcceptedAlgorithms=ssh-rsa
+PubkeyAcceptedAlgorithms=+ssh-rsa
 
 Host github.com
     HostName github.com
     User git
     ProxyCommand connect.exe -S 127.0.0.1:10808 %h %p
+
+ProxyCommand ncat --proxy 127.0.0.1:10808 --proxy-type socks5 %h %p
 
 # msys2
 # node
