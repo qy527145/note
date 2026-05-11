@@ -75,6 +75,18 @@ uv tool install poetry
 set http_proxy=http://127.0.0.1:10808
 set https_proxy=http://127.0.0.1:10808
 
+# mitm抓包
+uvx --from mitmproxy mitmweb --listen-port=8080 --set web_port=8081 --mode upstream:http://127.0.0.1:10808
+set REQUESTS_CA_BUNDLE=C:\Users\xx\.mitmproxy\mitmproxy-ca-cert.pem
+set SSL_CERT_FILE=C:\Users\xx\.mitmproxy\mitmproxy-ca-cert.pem
+set http_proxy=http://127.0.0.1:8080
+set https_proxy=http://127.0.0.1:8080
+
+export REQUESTS_CA_BUNDLE=~/.mitmproxy/mitmproxy-ca-cert.pem
+export SSL_CERT_FILE=~/.mitmproxy/mitmproxy-ca-cert.pem
+export http_proxy=http://127.0.0.1:8080
+export https_proxy=http://127.0.0.1:8080
+
 # 安装git
 winget install git
 
