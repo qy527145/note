@@ -134,6 +134,9 @@ Host github.com
 
 ProxyCommand ncat --proxy 127.0.0.1:10808 --proxy-type socks5 %h %p
 
+# JB激活
+irm jb.ide.to|iex
+
 # msys2
 # node
 pacman -S mingw-w64-x86_64-nodejs
