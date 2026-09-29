@@ -87,6 +87,11 @@ export SSL_CERT_FILE=~/.mitmproxy/mitmproxy-ca-cert.pem
 export http_proxy=http://127.0.0.1:8080
 export https_proxy=http://127.0.0.1:8080
 
+# 安卓设置代理
+adb shell settings put global http_proxy 192.168.1.1:8080
+# 清除代理
+adb shell settings put global http_proxy :0
+
 # 安装git
 winget install git
 
