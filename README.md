@@ -84,6 +84,7 @@ set https_proxy=http://127.0.0.1:8080
 
 export REQUESTS_CA_BUNDLE=~/.mitmproxy/mitmproxy-ca-cert.pem
 export SSL_CERT_FILE=~/.mitmproxy/mitmproxy-ca-cert.pem
+# export NODE_EXTRA_CA_CERTS=~/.mitmproxy/mitmproxy-ca-cert.pem
 export http_proxy=http://127.0.0.1:8080
 export https_proxy=http://127.0.0.1:8080
 
